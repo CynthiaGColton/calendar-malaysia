@@ -1,5 +1,10 @@
-/* All the CSS from your original code goes here */
-/* Copy everything from the <style> tag in your original HTML */
+:root {
+    --malaysia-blue: #010066;
+    --malaysia-red: #cc0001;
+    --malaysia-yellow: #ffcc00;
+    --malaysia-white: #ffffff;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -15,18 +20,125 @@ body {
     min-height: 100vh;
 }
 
-/* ... continue with all other CSS rules ... */
+.calendar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
 
-@media (max-width: 600px) {
-    .monthly-view .calendar-grid {
-        grid-template-columns: repeat(1, 1fr);
-    }
-    
-    .calendar-day-header {
-        display: none;
-    }
-    
-    .calendar-day {
-        min-height: auto;
-    }
+.calendar-header {
+    background: linear-gradient(135deg, var(--malaysia-blue) 0%, #2a5298 100%);
+    color: white;
+    padding: 25px;
+    text-align: center;
+    position: relative;
+}
+
+.malaysia-flag {
+    width: 80px;
+    height: 40px;
+    background: var(--malaysia-blue);
+    position: relative;
+    display: inline-block;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.flag-stripe {
+    position: absolute;
+    width: 100%;
+    height: 33.33%;
+}
+
+.flag-stripe.red {
+    background: var(--malaysia-red);
+    top: 0;
+}
+
+.flag-stripe.white {
+    background: var(--malaysia-white);
+    top: 33.33%;
+}
+
+.flag-stripe.blue {
+    background: var(--malaysia-blue);
+    bottom: 0;
+}
+
+.crescent {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: var(--malaysia-yellow);
+    border-radius: 50%;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+}
+
+.star {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: var(--malaysia-yellow);
+    clip-path: polygon(
+        50% 0%,
+        61% 35%,
+        98% 35%,
+        68% 57%,
+        79% 91%,
+        50% 70%,
+        21% 91%,
+        32% 57%,
+        2% 35%,
+        39% 35%
+    );
+    top: 50%;
+    left: 25px;
+    transform: translateY(-50%);
+}
+
+.calendar-header h1 {
+    font-size: 2.3rem;
+    margin-bottom: 10px;
+    color: var(--malaysia-white);
+}
+
+/* ... rest of your CSS with Malaysia color scheme ... */
+
+.calendar-day-header {
+    background: var(--malaysia-blue);
+    color: var(--malaysia-white);
+    padding: 12px;
+    text-align: center;
+    font-weight: 600;
+    border-radius: 5px;
+}
+
+.holiday-info {
+    background: rgba(204, 0, 1, 0.1);
+    border-left: 3px solid var(--malaysia-red);
+}
+
+.holiday-popup-title {
+    color: var(--malaysia-red);
+}
+
+.month-btn {
+    background: var(--malaysia-blue);
+    color: var(--malaysia-white);
+}
+
+.month-btn:hover {
+    background: var(--malaysia-red);
+}
+
+/* Responsive styles remain the same */
+@media (max-width: 768px) {
+    /* ... existing responsive styles ... */
 }
